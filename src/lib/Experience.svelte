@@ -1,6 +1,16 @@
 <script lang="ts">
-    import LazyLoad from "./components/LazyLoad.svelte";
+  import { onMount } from "svelte";
     import WorkCard from "./components/WorkCard.svelte";
+
+    let innerWidth:number = window.innerWidth
+
+    onMount(() => {
+        function onResize() {
+			innerWidth = window.innerWidth;
+		}
+		window.addEventListener('resize', onResize);
+		return () => window.removeEventListener('resize', onResize);    
+    })
 </script>
 
 <div class="workPage">
@@ -10,7 +20,11 @@
                 title="Fullstack Developer" 
                 company="Iron Grid" 
                 date="June 2023 - Present"
-                techStack={["Next.js", "|", "TypeScript", "|", "0Auth", "|", "Supabase", "|", "Postgres", "|", "API", "|", "CSS", "|", "Git/GitHub", "|", "CI/CD"]}
+                techStack={
+                    innerWidth <= 786 
+                        ? ["Next.js", "|", "TypeScript", "|", "0Auth", "|", "Supabase", "|", "Postgres", "|", "API", "|", "CSS", "|", "Git/GitHub", "|", "CI/CD"].filter(x => x != "|")
+                        : ["Next.js", "|", "TypeScript", "|", "0Auth", "|", "Supabase", "|", "Postgres", "|", "API", "|", "CSS", "|", "Git/GitHub", "|", "CI/CD"]
+                }
                 description={[
                     "Developed a comprehensive web application leveraging Next.js and TypeScript to create a responsive, user-friendly interface.",
                     "Integrated OAuth-based authentication, enabling secure and seamless user login through various providers.",
@@ -22,10 +36,14 @@
                 ]}
             />
             <WorkCard 
-                title="Frontend Engineer (Web3)" 
-                company="JOYWORLD, Inc" 
+                title={innerWidth <= 786 ? "Frontend Engineer" : "Frontend Engineer (Web3)"}
+                company={innerWidth <= 786 ? "JOYWORLD" : "JOYWORLD, Inc"} 
                 date="June 2021 - Jan. 2023"
-                techStack={["React", "|", "Next.js", "|", "TypeScript", "|", "Web3.js", "|", "GraphQL", "|", "MongoDB", "|", "API", "|", "Deno.js", "|", "AWS", "|", "CI/CD"]}
+                techStack={
+                innerWidth <= 786 
+                    ? ["React", "|", "Next.js", "|", "TypeScript", "|", "Web3.js", "|", "GraphQL", "|", "MongoDB", "|", "API", "|", "Deno.js", "|", "AWS", "|", "CI/CD"].filter(x => x != "|")
+                    : ["React", "|", "Next.js", "|", "TypeScript", "|", "Web3.js", "|", "GraphQL", "|", "MongoDB", "|", "API", "|", "Deno.js", "|", "AWS", "|", "CI/CD"]
+                }
                 description={[
                 "Developed user-centric Web3-enabled marketplace with React and Next.js, focusing on performance and scalability.",
                 "Utilized TypeScript and Web3.js for type-safe code and secure Ethereum smart contract interactions.",
@@ -39,7 +57,11 @@
                 title="Lead Loan Analyst" 
                 company="PNC Bank" 
                 date="Dec. 2018 - June 2021"
-                techStack={["Excel", "|", "SQL", "|", "CRM Software", "|", "Risk Assessment Software", "|", "Data Visualization Tools"]}
+                techStack={
+                    innerWidth <= 786
+                        ? ["Excel", "|", "SQL", "|", "CRM Software", "|"].filter(x => x != "|")
+                        : ["Excel", "|", "SQL", "|", "CRM Software", "|", "Risk Assessment Software", "|", "Data Visualization Tools"]
+                }
                 description={[
                     "Reviewed and analyzed loan applications, applying data-driven techniques to assess creditworthiness, similar to evaluating code quality and system reliability in engineering.",
                     "Adapted workflows to comply with federal regulations, demonstrating adaptability to procedural changes, a skill transferable to agile software development environments.",
@@ -60,33 +82,67 @@
         }
     }
 
-    .workPage {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        margin-top: 70px;
-        min-height: 1260px;
-    }
+    @media screen and (max-width: 786px) {
+        .workPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin-top: 70px;
+            min-height: 1260px;
+        }
 
-    .workPage h1 {
-        font-size: 48px;
-        text-decoration: underline;
-        animation: 1s slide-in ease-out .15s forwards;
-        transform: translateX(-110%);
-        opacity: 0;
+        .workPage h1 {
+            font-size: 48px;
+            text-decoration: underline;
+            animation: 1s slide-in ease-out .15s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+        }
+        
+        .workPage .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            animation: 1s slide-in ease-out .3s forwards;
+            /* transform: translateX(-110%); */
+            opacity: 0;
+
+        }
     }
     
-    .workPage .container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        animation: 1s slide-in ease-out .3s forwards;
-        /* transform: translateX(-110%); */
-        opacity: 0;
+    @media screen and (min-width: 786px) {
+        .workPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin-top: 70px;
+            min-height: 1260px;
+        }
 
+        .workPage h1 {
+            font-size: 48px;
+            text-decoration: underline;
+            animation: 1s slide-in ease-out .15s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+        }
+        
+        .workPage .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            animation: 1s slide-in ease-out .3s forwards;
+            /* transform: translateX(-110%); */
+            opacity: 0;
+
+        }
     }
 </style>

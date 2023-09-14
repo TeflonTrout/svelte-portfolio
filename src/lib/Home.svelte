@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+    import { onMount } from "svelte";
     import Logo from "$lib/images/JT.jpg"
     import Button from "./components/Button.svelte";
 
@@ -32,62 +33,129 @@
         }
     }
 
-    .homePage {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    /* MOBILE */
+    @media screen and (max-width: 786px) {
+        .homePage {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .homePage .btnContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            animation: 1s slide-in ease-out .5s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+        }
+
+        .homePage .container {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .homePage .container .content {
+            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .homePage .container .content h2 {
+            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .4s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .homePage img {
+            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards;
+            transform: translateX(110%);
+            opacity: 0;
+            width: 30%;
+            border-radius: 50%;
+        }
+
+        .homePage h1 {
+            text-decoration: underline;
+            font-size: 48px;
+            text-align: center;
+        }
     }
 
-    .homePage .btnContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        animation: 1s slide-in ease-out .5s forwards;
-        transform: translateX(-110%);
-        opacity: 0;
-    }
+    @media screen and (min-width: 786px) {
+        .homePage {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .homePage .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
+        .homePage .btnContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            animation: 1s slide-in ease-out .5s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+        }
 
-    .homePage .container .content {
-        animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards;
-        transform: translateX(-110%);
-        opacity: 0;
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    
-    .homePage .container .content h2 {
-        animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .4s forwards;
-        transform: translateX(-110%);
-        opacity: 0;
-        margin-bottom: 30px;
-    }
-    
-    .homePage img {
-        animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards;
-        transform: translateX(110%);
-        opacity: 0;
-        width: 30%;
-        border-radius: 50%;
-    }
+        .homePage .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-    .homePage h1 {
-        text-decoration: underline;
-        font-size: 48px;
+        .homePage .container .content {
+            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .homePage .container .content h2 {
+            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .4s forwards;
+            transform: translateX(-110%);
+            opacity: 0;
+            margin-bottom: 30px;
+        }
+        
+        .homePage img {
+            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards;
+            transform: translateX(110%);
+            opacity: 0;
+            width: 30%;
+            border-radius: 50%;
+        }
+
+        .homePage h1 {
+            text-decoration: underline;
+            font-size: 48px;
+        }
     }
 </style>
