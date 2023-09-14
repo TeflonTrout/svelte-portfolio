@@ -11,16 +11,16 @@
 <div class="projectCard">
     <img src={backgroundImage} alt="project preview">
     <h1>{projectName}</h1>
+    <p class="description">{description}</p>
     <div class="infoContainer">
-        <p class="description">{description}</p>
-        <div class="btnContainer">
-            <a href={liveSiteURL} target="_blank" rel="noopener noreferrer">
-                <Button text="Live Site" />
-            </a>
-            <a href={codeURL} target="_blank" rel="noopener noreferrer">
-                <Button text="Code" />
-            </a>
-        </div>
+    </div>
+    <div class="btnContainer">
+        <a href={liveSiteURL} target="_blank" rel="noopener noreferrer">
+            <Button text="Live Site" />
+        </a>
+        <a href={codeURL} target="_blank" rel="noopener noreferrer">
+            <Button text="Code" />
+        </a>
     </div>
 </div>
 
@@ -30,7 +30,7 @@
         min-height: 400px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         background-position: center;
         background-size: cover;
@@ -61,15 +61,18 @@
         margin-bottom: 10px;
     }
 
-    .projectCard .infoContainer .description {
+    .projectCard .description {
+        width: 90%;
         text-align: center;
     }
 
     .projectCard .btnContainer {
         display: flex;
+        justify-self: flex-end;
         justify-content: space-around;
         align-items: center;
-        margin-top: 5px;
+        margin-top: auto;
         width: 100%;
+        margin-bottom: 10px;
     }
 </style>

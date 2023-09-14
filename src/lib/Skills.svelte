@@ -56,60 +56,127 @@
 </div>
 
 <style>
-    .skillsPage {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
+    /* MOBILE */
+    @media screen and (max-width: 786px) {
+        .skillsPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+        }
+
+        .skillsPage h1 {
+            margin-bottom: 10px;
+            text-decoration: underline;
+            font-size: 48px;
+        }
+
+        .skillsPage .containers {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .skillsPage h2 {
+            text-decoration: underline;
+        }
+
+        .skillsPage .skillsContainer {
+            background-color: var(--azure);
+            width: 90%;
+            color: black;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            transition: .15s ease-in;
+        }
+
+        .skillsPage .skillsContainer:hover {
+            transition: .15s ease-in;
+            box-shadow: white 0px 0px 5px 3px;
+        }
+
+        .skillsPage .skillsContainer ul {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            padding: 0;
+            margin-top: 5px;
+        }
+
+        .skillsPage .skillsContainer li {
+            text-align: center;
+            list-style: none;
+            font-size: 20px;
+        }
     }
 
-    .skillsPage h1 {
-        margin-bottom: 10px;
-        text-decoration: underline;
-        font-size: 48px;
-    }
+    @media screen and (min-width: 786px) {
+        .skillsPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+        }
 
-    .skillsPage .containers {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: stretch;
-    }
+        .skillsPage h1 {
+            margin-bottom: 10px;
+            text-decoration: underline;
+            font-size: 48px;
+        }
 
-    .skillsPage h2 {
-        text-decoration: underline;
-    }
+        .skillsPage .containers {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
 
-    .skillsPage .skillsContainer {
-        background-color: var(--azure);
-        color: black;
-        border-radius: 5px;
-        padding: 10px;
-        width: 25%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        transition: .15s ease-in;
-    }
+        .skillsPage h2 {
+            text-decoration: underline;
+        }
 
-    .skillsPage .skillsContainer:hover {
-        transition: .15s ease-in;
-        box-shadow: white 0px 0px 5px 3px;
-    }
+        .skillsPage .skillsContainer {
+            background-color: var(--azure);
+            color: black;
+            border-radius: 5px;
+            padding: 10px;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            transition: .15s ease-in;
+        }
 
-    .skillsPage .skillsContainer ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 0;
-    }
+        .skillsPage .skillsContainer:hover {
+            transition: .15s ease-in;
+            box-shadow: white 0px 0px 5px 3px;
+        }
 
-    .skillsPage .skillsContainer li {
-        text-align: center;
-        list-style: none;
-        font-size: 20px;
+        .skillsPage .skillsContainer ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+        }
+
+        .skillsPage .skillsContainer li {
+            text-align: center;
+            list-style: none;
+            font-size: 20px;
+        }
     }
 </style>

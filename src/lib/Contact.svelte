@@ -72,137 +72,276 @@
 </div>
 
 <style>
-    .contactPage {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        margin-top: 45px;
+    /* MOBILE */
+    @media screen and (max-width: 786px) {
+        .contactPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin-top: 45px;
+        }
+
+        .contactPage h1 {
+            font-size: 48px;
+            text-decoration: underline;
+        }
+        
+        .contactForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .contactForm .inputField {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contactForm .inputField input::placeholder {
+            line-height: normal;
+            font-size: 24px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contactForm .inputField input {
+            width: 100%;
+            font-size: 24px;
+            outline: none;
+            border: none;
+            background-color: var(--indigo-2);
+            color: white;
+            border-radius: 5px;
+            padding-left: 8px;
+            padding: 8px;
+            transition: .15s ease-in;
+        }
+
+        .contactForm .inputField input:focus {
+            background-color: var(--indigo);
+            transition: .15s ease-in;
+            box-shadow: 0 0 2px 2px;
+        }
+        
+        .contactForm .messageField {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .contactForm .messageField textarea {
+            width: 100%;
+            padding: 10px;
+            min-height: 200px;
+            font-size: 24px;
+            outline: none;
+            border: none;
+            background-color: var(--indigo-2);
+            color: white;
+            border-radius: 10px;
+            transition: .15s ease-in;
+            resize: none;
+        }
+
+        .contactForm .messageField textarea:focus {
+            background-color: var(--indigo);
+            transition: .15s ease-in;
+            box-shadow: 0 0 2px 2px;
+        }
+
+        .contactForm .messageField textarea::placeholder {
+            font-size: 24px;
+            color: white;
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+        }
+
+        button {
+            display: inline-block;
+            position: relative;
+            color: var(--indigo-2);
+            outline: none;
+            border: none;
+            background-color: white;
+            padding: 5px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .25s ease-in;
+            font-weight: bold;
+            width: auto;
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 0 5px 5px;
+            background: var(--sky-blue);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        button:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
 
-    .contactPage h1 {
-        font-size: 48px;
-        text-decoration: underline;
-    }
-    
-    .contactForm {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-        width: 100%;
-        gap: 20px;
-    }
+    @media screen and (min-width: 786px) {
+        .contactPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin-top: 45px;
+        }
 
-    .contactForm .inputField {
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .contactPage h1 {
+            font-size: 48px;
+            text-decoration: underline;
+        }
+        
+        .contactForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+            gap: 20px;
+        }
 
-    .contactForm .inputField input::placeholder {
-        line-height: normal;
-        font-size: 24px;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .contactForm .inputField input {
-        width: 100%;
-        font-size: 24px;
-        outline: none;
-        border: none;
-        background-color: var(--indigo-2);
-        color: white;
-        border-radius: 5px;
-        padding-left: 8px;
-        padding: 8px;
-        transition: .15s ease-in;
-    }
+        .contactForm .inputField {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .contactForm .inputField input:focus {
-        background-color: var(--indigo);
-        transition: .15s ease-in;
-        box-shadow: 0 0 2px 2px;
-    }
-    
-    .contactForm .messageField {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    
-    .contactForm .messageField textarea {
-        width: 100%;
-        padding: 10px;
-        min-height: 200px;
-        font-size: 24px;
-        outline: none;
-        border: none;
-        background-color: var(--indigo-2);
-        color: white;
-        border-radius: 10px;
-        transition: .15s ease-in;
-        resize: none;
-    }
+        .contactForm .inputField input::placeholder {
+            line-height: normal;
+            font-size: 24px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contactForm .inputField input {
+            width: 100%;
+            font-size: 24px;
+            outline: none;
+            border: none;
+            background-color: var(--indigo-2);
+            color: white;
+            border-radius: 5px;
+            padding-left: 8px;
+            padding: 8px;
+            transition: .15s ease-in;
+        }
 
-    .contactForm .messageField textarea:focus {
-        background-color: var(--indigo);
-        transition: .15s ease-in;
-        box-shadow: 0 0 2px 2px;
-    }
+        .contactForm .inputField input:focus {
+            background-color: var(--indigo);
+            transition: .15s ease-in;
+            box-shadow: 0 0 2px 2px;
+        }
+        
+        .contactForm .messageField {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .contactForm .messageField textarea {
+            width: 100%;
+            padding: 10px;
+            min-height: 200px;
+            font-size: 24px;
+            outline: none;
+            border: none;
+            background-color: var(--indigo-2);
+            color: white;
+            border-radius: 10px;
+            transition: .15s ease-in;
+            resize: none;
+        }
 
-    .contactForm .messageField textarea::placeholder {
-        font-size: 24px;
-        color: white;
-    }
+        .contactForm .messageField textarea:focus {
+            background-color: var(--indigo);
+            transition: .15s ease-in;
+            box-shadow: 0 0 2px 2px;
+        }
 
-    .buttonContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 50%;
-    }
+        .contactForm .messageField textarea::placeholder {
+            font-size: 24px;
+            color: white;
+        }
 
-    button {
-        display: inline-block;
-        position: relative;
-        color: var(--indigo-2);
-        outline: none;
-        border: none;
-        background-color: white;
-        padding: 5px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: .25s ease-in;
-        font-weight: bold;
-        width: auto;
-    }
+        .buttonContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 50%;
+        }
 
-    button:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 4px;
-        bottom: 0;
-        left: 0;
-        border-radius: 0 0 5px 5px;
-        background: var(--sky-blue);
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-    }
-    
-    button:hover:after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
+        button {
+            display: inline-block;
+            position: relative;
+            color: var(--indigo-2);
+            outline: none;
+            border: none;
+            background-color: white;
+            padding: 5px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .25s ease-in;
+            font-weight: bold;
+            width: auto;
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 0 5px 5px;
+            background: var(--sky-blue);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        button:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
 </style>

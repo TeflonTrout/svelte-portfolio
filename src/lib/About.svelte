@@ -21,12 +21,24 @@
 </LazyLoad>
 
 <style>
+    @media screen and (max-width: 786px) {
+        .aboutPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 80px !important;
+        }
+    }
+
     .aboutPage {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin-top: 70px;
     }
     
     .aboutPage .container {

@@ -33,27 +33,57 @@
 </div>
 
 <style>
-    .projectPage {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        width: 90%;
-        margin-top: 70px;
+
+    @media screen and (max-width: 786px) {
+        .projectPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            width: 90%;
+            margin-top: 70px;
+            margin-bottom: 70px;
+        }
+
+        .projectPage h1 {
+            font-size: 48px;
+            text-decoration: underline;
+            margin: 20px;
+        }
+
+        .projectPage .projectGrid {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
-    .projectPage h1 {
-        font-size: 48px;
-        text-decoration: underline;
-        margin: 20px;
-    }
+    @media screen and (min-width: 786px) {
+        .projectPage {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            width: 90%;
+            margin-top: 70px;
+        }
 
-    .projectPage .projectGrid {
-        width: 100%;
-        display: grid;
-        gap: 20px;
-        justify-items: center;
-        align-items: stretch;
-        grid-template-columns: 1fr 1fr;
+        .projectPage h1 {
+            font-size: 48px;
+            text-decoration: underline;
+            margin: 20px;
+        }
+
+        .projectPage .projectGrid {
+            width: 100%;
+            display: grid;
+            gap: 20px;
+            justify-items: center;
+            align-items: stretch;
+            grid-template-columns: 1fr 1fr;
+        }
     }
 </style>

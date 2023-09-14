@@ -6,6 +6,7 @@
   import Projects from "$lib/Projects.svelte";
   import Resume from "$lib/Resume.svelte";
   import Skills from "$lib/Skills.svelte";
+
 </script>
 
 <div id="home" class="homePage">
@@ -40,14 +41,15 @@
         justify-content: center;
         align-items: center;
     }
-
-    .aboutPage {
-        height: 100vh;
-        width: 100%;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    @media screen and (max-width: 786px) {
+        .homePage {
+            height: calc(100vh + 130px) !important;
+            width: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        } 
     }
 </style>
