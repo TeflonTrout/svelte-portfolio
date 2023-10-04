@@ -33,7 +33,7 @@
 </div>
 
 <style>
-
+    /* MOBILE */
     @media screen and (max-width: 786px) {
         .projectPage {
             display: flex;
@@ -61,14 +61,16 @@
         }
     }
 
+    /* DESKTOP */
     @media screen and (min-width: 786px) {
         .projectPage {
             display: flex;
             flex-direction: column;
             justify-content: start;
             align-items: center;
-            width: 90%;
+            width: 100%;
             margin-top: 70px;
+            padding: 30px;
         }
 
         .projectPage h1 {

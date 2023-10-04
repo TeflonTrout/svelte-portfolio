@@ -12,7 +12,7 @@
 <div id="home" class="homePage">
     <Home />
 </div>
-<div id='about' class="page">
+<div id='about' >
     <About />
 </div>
 <div id="experience" class="page">

@@ -127,7 +127,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 90%;
+            width: 100%;
+            padding: 0 30px;
         }
 
         .skillsPage h1 {
