@@ -10,6 +10,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@iconify/svelte": "^3.1.4",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@tsconfig/svelte": "^5.0.2",
@@ -25,6 +26,7 @@
 		"axios": "^1.5.0",
 		"nodemailer": "^6.9.5",
 		"svelte-email": "^0.0.4",
-		"svelte-pdf": "^1.0.20"
+		"svelte-pdf": "^1.0.20",
+		"svelte-pdf-viewer": "^1.0.0"
 	}
 }

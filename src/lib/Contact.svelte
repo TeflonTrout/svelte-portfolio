@@ -1,6 +1,7 @@
 <script lang='ts'>
     import axios from "axios";
 
+    export let innerWidth:number;
     let emailStatus: boolean | null = null;
     let emailSender: string | null = "";
     let emailSubject: string | null = "";
@@ -80,7 +81,7 @@
             justify-content: flex-start;
             align-items: center;
             width: 100%;
-            margin-top: 45px;
+            margin-bottom: 70px;
         }
 
         .contactPage h1 {
