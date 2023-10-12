@@ -25,54 +25,108 @@
 </div>
 
 <style>
-    .projectCard {
-        width: 100%;
-        min-height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        background-position: center;
-        background-size: cover;
-        border-radius: 5px;
-        transition: .35s ease-in-out;
-        background: var(--indigo-2);
+    /* MOBILE */
+    @media screen and (max-width: 786px) {
+        .projectCard {
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+            border-radius: 5px;
+            transition: .35s ease-in-out;
+            background: var(--indigo-2);
+        }
+
+        
+        .projectCard img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+            border-radius: 5px 5px 0 0 ;
+        }
+
+        .projectCard .infoContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .projectCard .description {
+            width: 90%;
+            text-align: center;
+        }
+
+        .projectCard .btnContainer {
+            display: flex;
+            justify-self: flex-end;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+            margin-bottom: 10px;
+        }
     }
+
+    @media screen and (min-width: 786px) {   
+        .projectCard {
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+            border-radius: 5px;
+            transition: .35s ease-in-out;
+            background: var(--indigo-2);
+        }
+
+        .projectCard:hover {
+            box-shadow: 0px 0px 5px 5px white;
+        }
+        
+        .projectCard img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+            border-radius: 5px 5px 0 0 ;
+        }
+
+        .projectCard .infoContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .projectCard .description {
+            width: 90%;
+            text-align: center;
+        }
+
+        .projectCard .btnContainer {
+            display: flex;
+            justify-self: flex-end;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
     
-    img {
-        width: 100%;
-        object-fit: cover;
-        aspect-ratio: 16/9;
-        border-radius: 5px 5px 0 0 ;
-    }
-
-    .projectCard:hover {
-        transition: .15s ease-in-out;
-        box-shadow: 0px 0px 10px 2px;
-    }
-
-    .projectCard .infoContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        width: 80%;
-        margin-bottom: 10px;
-    }
-
-    .projectCard .description {
-        width: 90%;
-        text-align: center;
-    }
-
-    .projectCard .btnContainer {
-        display: flex;
-        justify-self: flex-end;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: auto;
-        width: 100%;
-        margin-bottom: 10px;
-    }
 </style>
+    

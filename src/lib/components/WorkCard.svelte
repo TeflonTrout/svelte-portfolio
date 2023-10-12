@@ -1,19 +1,29 @@
 <script lang="ts">
-    import LazyLoad from "./LazyLoad.svelte";
-import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
+
+    export let logo:string;
     export let title:string;
     export let company:string;
     export let date:string;
     export let techStack:Array<string>;
     export let description:Array<string>;
+        let innerWidth:number = window.innerWidth
+
+    onMount(() => {
+        function onResize() {
+			innerWidth = window.innerWidth;
+		}
+		window.addEventListener('resize', onResize);
+		return () => window.removeEventListener('resize', onResize);    
+    })
 </script>
 
-<div class="workCardWrapper" transition:fade={{duration: 1000}}>
-    <!-- <LazyLoad> -->
+<div class="workCardWrapper">
         <div class="workCard">
             <div class="heading">
+                <img src={logo} alt="company">
                 <h1 class="company">{company}&nbsp;</h1>
-                <h1 class="title">- {title}</h1>
+                <h1 class="title">{innerWidth > 786 ? "-" : ""} {title}</h1>
             </div>
             <h4 class="date">{date}</h4>
                 <span></span>
@@ -31,7 +41,6 @@ import { fade } from "svelte/transition";
                 </ul>
             </div>
         </div>
-    <!-- </LazyLoad> -->
 </div>  
 
 <style>
@@ -56,23 +65,33 @@ import { fade } from "svelte/transition";
 
         .workCardWrapper .workCard .heading {
             display: flex;
+            flex-direction: column;
             width: 100%;
             justify-content: center;
             align-items: center;
             align-self: center;
         }
+        
+        .workCardWrapper .workCard .heading img {
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
         .workCardWrapper .workCard .heading .company {
-            font-size: 24px;
+            font-size: 32px;
         }
 
         .workCardWrapper .workCard .heading .title {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
             font-family: "Nunito";
         }
-
+        
         .workCardWrapper .workCard .date {
+            font-size: 18px;
+            font-weight: bold;
+            font-family: "Nunito";
             width: 100%;
             align-self: center;
             text-align: center;
@@ -95,7 +114,7 @@ import { fade } from "svelte/transition";
             align-items: center;
             width: 100%;
         }
-
+    
         .workCardWrapper .workCard .description {
             width: 100%;
             gap: 5px;
@@ -110,6 +129,10 @@ import { fade } from "svelte/transition";
     @media screen and (min-width: 786px) {
         .workCardWrapper {
             width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .workCardWrapper .workCard {
@@ -124,13 +147,19 @@ import { fade } from "svelte/transition";
             border-radius: 10px;
         }
 
+        
         .workCardWrapper .workCard .heading {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
-            align-self: flex-start;
+            align-self: center;
         }
-
+        
+        .workCardWrapper .workCard .heading img {
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
         .workCardWrapper .workCard .heading .company {
             font-size: 36px;
         }
@@ -143,8 +172,8 @@ import { fade } from "svelte/transition";
 
         .workCardWrapper .workCard .date {
             width: 100%;
-            align-self: flex-start;
-            text-align: start;
+            text-align: center;
+            align-self: center;
         }
 
         .workCardWrapper .workCard span {
@@ -170,7 +199,11 @@ import { fade } from "svelte/transition";
 
         .workCardWrapper .workCard .description ul {
             padding-left: 15px;
-
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 8px;
         }
     }
 </style>

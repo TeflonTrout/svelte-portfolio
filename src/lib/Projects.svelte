@@ -33,7 +33,7 @@
 </div>
 
 <style>
-
+    /* MOBILE */
     @media screen and (max-width: 786px) {
         .projectPage {
             display: flex;
@@ -41,8 +41,6 @@
             justify-content: start;
             align-items: center;
             width: 90%;
-            margin-top: 70px;
-            margin-bottom: 70px;
         }
 
         .projectPage h1 {
@@ -61,13 +59,14 @@
         }
     }
 
+    /* DESKTOP */
     @media screen and (min-width: 786px) {
         .projectPage {
             display: flex;
             flex-direction: column;
             justify-content: start;
             align-items: center;
-            width: 90%;
+            width: 100%;
             margin-top: 70px;
         }
 
@@ -78,12 +77,13 @@
         }
 
         .projectPage .projectGrid {
-            width: 100%;
+            width: 85%;
             display: grid;
-            gap: 20px;
+            gap: 40px;
             justify-items: center;
             align-items: stretch;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            justify-content: space-between;
         }
     }
 </style>

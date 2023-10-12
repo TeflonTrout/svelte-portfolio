@@ -1,22 +1,18 @@
 <script lang="ts">
-  import { onMount } from "svelte";
     import WorkCard from "./components/WorkCard.svelte";
+    import PNC from "./images/pncLogo.png"
+    import IronGrid from "./images/ironGridLogo.png"
+    import Joyworld from "./images/joyworldLogo.jpg"
 
-    let innerWidth:number = window.innerWidth
+    export let innerWidth:number 
 
-    onMount(() => {
-        function onResize() {
-			innerWidth = window.innerWidth;
-		}
-		window.addEventListener('resize', onResize);
-		return () => window.removeEventListener('resize', onResize);    
-    })
 </script>
 
 <div class="workPage">
     <h1>Work Experience</h1>
     <div class="container">
             <WorkCard 
+                logo={IronGrid}
                 title="Fullstack Developer" 
                 company="Iron Grid" 
                 date="June 2023 - Present"
@@ -36,6 +32,7 @@
                 ]}
             />
             <WorkCard 
+                logo={Joyworld}
                 title={innerWidth <= 786 ? "Frontend Engineer" : "Frontend Engineer (Web3)"}
                 company={innerWidth <= 786 ? "JOYWORLD" : "JOYWORLD, Inc"} 
                 date="June 2021 - Jan. 2023"
@@ -54,6 +51,7 @@
                 ]}
             />
             <WorkCard 
+                logo={PNC}
                 title="Lead Loan Analyst" 
                 company="PNC Bank" 
                 date="Dec. 2018 - June 2021"
@@ -82,6 +80,7 @@
         }
     }
 
+    /* MOBILE */
     @media screen and (max-width: 786px) {
         .workPage {
             display: flex;
@@ -89,8 +88,6 @@
             justify-content: flex-start;
             align-items: center;
             width: 100%;
-            margin-top: 70px;
-            min-height: 1260px;
         }
 
         .workPage h1 {

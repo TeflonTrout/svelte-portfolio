@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import Logo from "$lib/images/JT.jpg"
     import Button from "./components/Button.svelte";
 
@@ -32,6 +31,12 @@
             transform: translateX(0)
         }
     }
+ 
+    @keyframes floating {
+        0% { transform: translate(0,  0); }
+        50%  { transform: translate(0, -10%); }
+        100%   { transform: translate(0, 0%); }    
+    }
 
     /* MOBILE */
     @media screen and (max-width: 786px) {
@@ -39,7 +44,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
         }
 
@@ -146,8 +151,8 @@
         }
         
         .homePage img {
-            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards;
             transform: translateX(110%);
+            animation: 1s slide-in cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s forwards, 3s floating ease-in-out 1.3s infinite forwards;
             opacity: 0;
             width: 30%;
             border-radius: 50%;
