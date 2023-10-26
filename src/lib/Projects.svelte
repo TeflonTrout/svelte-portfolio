@@ -10,6 +10,13 @@
     <div class="projectGrid">
         <ProjectCard 
             backgroundImage={NGW} 
+            projectName="Enchanted Castle API"
+            description="Developed a robust fullstack web API using Golang for Disney's Lorcana game, enabling users to effortlessly explore and utilize Lorcana cards in a tailored and flexible manner."
+            liveSiteURL=""
+            codeURL=""
+        />
+        <ProjectCard 
+            backgroundImage={NGW} 
             projectName="Nolengrad Warriors"
             description="Fullstack Web3 NFT Project utilizing Chainlink's VRF to create 'true random' NFT attributes."
             liveSiteURL="https://nolengrad-warriors.vercel.app/"
