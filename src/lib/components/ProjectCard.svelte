@@ -6,25 +6,40 @@
     export let description: string;
     export let liveSiteURL: string;
     export let codeURL: string;
+    export let inProgress:boolean = false;
 </script>
 
 <div class="projectCard">
     <img src={backgroundImage} alt="project preview">
+    {#if inProgress == true}
+        <div class="inProgressBanner">
+            In Progress
+        </div>
+    {/if}
     <h1>{projectName}</h1>
     <p class="description">{description}</p>
-    <div class="infoContainer">
-    </div>
-    <div class="btnContainer">
-        <a href={liveSiteURL} target="_blank" rel="noopener noreferrer">
-            <Button text="Live Site" />
-        </a>
-        <a href={codeURL} target="_blank" rel="noopener noreferrer">
-            <Button text="Code" />
-        </a>
-    </div>
+    {#if inProgress == true}
+        <div class="btnContainer">
+            <span></span>
+        </div>
+    {:else}
+        <div class="btnContainer">
+            <a href={liveSiteURL} target="_blank" rel="noopener noreferrer">
+                <Button text="Live Site" />
+            </a>
+            <a href={codeURL} target="_blank" rel="noopener noreferrer">
+                <Button text="Code" />
+            </a>
+        </div>
+    {/if}
 </div>
 
 <style>
+    @keyframes backgroundShift {
+        50% {
+            background: var(--sky-blue);
+        }
+    }
     /* MOBILE */
     @media screen and (max-width: 786px) {
         .projectCard {
@@ -81,7 +96,7 @@
             min-height: 400px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             background-position: center;
             background-size: cover;
@@ -94,25 +109,28 @@
             box-shadow: 0px 0px 5px 5px white;
         }
         
+        .projectCard .inProgressBanner {
+            background-color: var(--azure);
+            animation: backgroundShift 2s infinite;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            padding: 2px;
+        }
+
         .projectCard img {
             width: 100%;
-            object-fit: cover;
+            /* object-fit: cover; */
             aspect-ratio: 16/9;
             border-radius: 5px 5px 0 0 ;
         }
 
-        .projectCard .infoContainer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            width: 80%;
-            margin-bottom: 10px;
-        }
-
         .projectCard .description {
             width: 90%;
+            padding: 5px;
             text-align: center;
         }
 
@@ -121,7 +139,6 @@
             justify-self: flex-end;
             justify-content: space-around;
             align-items: center;
-            margin-top: auto;
             width: 100%;
             margin-bottom: 10px;
         }

@@ -3,18 +3,20 @@
   import TDI from "$lib/images/tdi.png"
   import FPC from "$lib/images/fpc.png"
   import NGW from "$lib/images/ngw.png"
+  import Placeholder from "$lib/images/placeholder.png"
 </script>
 
 <div class="projectPage">
     <h1>Projects</h1>
     <div class="projectGrid">
-        <!-- <ProjectCard 
-            backgroundImage={NGW} 
+        <ProjectCard 
+            backgroundImage={Placeholder} 
             projectName="Enchanted Castle API"
-            description="Developed a robust fullstack web API using Golang for Disney's Lorcana game, enabling users to effortlessly explore and utilize Lorcana cards in a tailored and flexible manner."
+            description="Developed a robust fullstack web API using Go for Disney's Lorcana game, enabling users to effortlessly explore and utilize Lorcana cards in a tailored and flexible manner."
             liveSiteURL=""
             codeURL=""
-        /> -->
+            inProgress
+        />
         <ProjectCard 
             backgroundImage={NGW} 
             projectName="Nolengrad Warriors"
