@@ -64,14 +64,16 @@
             border-radius: 5px 5px 0 0 ;
         }
 
-        .projectCard .infoContainer {
+        .projectCard .inProgressBanner {
+            background-color: var(--azure);
+            animation: backgroundShift 2s infinite;
+            width: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 5px;
-            width: 80%;
-            margin-bottom: 10px;
+            color: black;
+            font-weight: bold;
+            padding: 2px;
         }
 
         .projectCard .description {
