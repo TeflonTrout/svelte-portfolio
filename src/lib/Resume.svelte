@@ -1,17 +1,28 @@
 <script lang="ts">
-    import Resume from "$lib/Resume.pdf"
+    import Resume from "$lib/JT_Kazousky.pdf"
+    import Web3Resume from "$lib/Resume.pdf"
     export let innerWidth:number;
 </script>
 
 <div class="resumePage">
     {#if innerWidth > 786}
         <h1>Resume</h1>
-        <div class="resumeContainer">
+        <!-- <div class="resumeContainer">
             <iframe src={`${Resume}#zoom=80`} frameborder="0" title="resume" width="100%"></iframe>
-        </div>
-        {:else}
+        </div> -->
         <a href={`${Resume}`} target="_blank" rel="noopener noreferrer">
-            <h1>View My Resume</h1>
+            <h2>Traditional Resume</h2>
+        </a>
+        <a href={`${Web3Resume}`} target="_blank" rel="noopener noreferrer">
+            <h2>Web3 Resume</h2>
+        </a>
+        {:else}
+        <h1>Resume</h1>
+        <a href={`${Resume}`} target="_blank" rel="noopener noreferrer">
+            <h2>Traditional Resume</h2>
+        </a>
+        <a href={`${Web3Resume}`} target="_blank" rel="noopener noreferrer">
+            <h2>Web3 Resume</h2>
         </a>
     {/if}
 </div>
@@ -29,18 +40,20 @@
 
         .resumePage a {
             color: white;
-            padding: 10px;
-            width: 100%;
+            padding: 0px;
+            width: 80%;
             border-radius: 10px;
-            margin: 20px;
+            margin: 10px;
             background-color: var(--indigo);
         }
         
-        .resumePage a h1 {
+        .resumePage a h2 {
             text-decoration: underline;
             font-size: 36px;
             text-align: center;
+            font-weight: 100;
             margin: 20px;
+            font-family: "Yellowtail";
         }
     }
 
@@ -71,6 +84,24 @@
             width: 100%;
             height: 100vh;
             text-align: center;
+        }
+
+        .resumePage a {
+            color: white;
+            padding: 0px;
+            width: 50%;
+            border-radius: 10px;
+            margin: 20px;
+            background-color: var(--indigo);
+        }
+        
+        .resumePage a h2 {
+            text-decoration: underline;
+            font-size: 36px;
+            text-align: center;
+            font-weight: 100;
+            margin: 20px;
+            font-family: "Yellowtail";
         }
     }
 </style>

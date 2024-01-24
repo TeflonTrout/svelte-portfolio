@@ -6,6 +6,7 @@
     export let description: string;
     export let liveSiteURL: string;
     export let codeURL: string;
+    export let apiURL:string | null = null;
     export let inProgress:boolean = false;
 </script>
 
@@ -30,6 +31,11 @@
             <a href={codeURL} target="_blank" rel="noopener noreferrer">
                 <Button text="Code" />
             </a>
+            {#if apiURL != null}
+                <a href={apiURL} target="_blank" rel="noopener noreferrer">
+                    <Button text="API Code" />
+                </a>
+            {/if}
         </div>
     {/if}
 </div>

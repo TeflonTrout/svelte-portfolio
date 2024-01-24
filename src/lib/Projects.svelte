@@ -13,9 +13,9 @@
             backgroundImage={Placeholder} 
             projectName="Enchanted Castle API"
             description="Developed a robust fullstack web API using Go for Disney's Lorcana game, enabling users to effortlessly explore and utilize Lorcana cards in a tailored and flexible manner."
-            liveSiteURL=""
-            codeURL=""
-            inProgress
+            liveSiteURL="https://enchanted-castle.vercel.app"
+            codeURL="https://github.com/TeflonTrout/enchanted-castle-frontend"
+            apiURL="https://github.com/TeflonTrout/enchanted-castle-api"
         />
         <ProjectCard 
             backgroundImage={NGW} 
