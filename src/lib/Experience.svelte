@@ -13,9 +13,9 @@
     <div class="container">
             <WorkCard 
                 logo={IronGrid}
-                title="Fullstack Developer" 
-                company="Iron Grid" 
-                date="June 2023 - Present"
+                title="Software Engineer" 
+                company="Freelance/Iron Grid" 
+                date="May 2023 - Present"
                 techStack={
                     innerWidth <= 786 
                         ? ["Next.js", "|", "TypeScript", "|", "0Auth", "|", "Supabase", "|", "Postgres", "|", "API", "|", "CSS", "|", "Git/GitHub", "|", "CI/CD"].filter(x => x != "|")
@@ -33,9 +33,9 @@
             />
             <WorkCard 
                 logo={Joyworld}
-                title={innerWidth <= 786 ? "Frontend Engineer" : "Frontend Engineer (Web3)"}
+                title="Software Engineer"
                 company={innerWidth <= 786 ? "JOYWORLD" : "JOYWORLD, Inc"} 
-                date="June 2021 - Jan. 2023"
+                date="June 2021 - May 2023"
                 techStack={
                 innerWidth <= 786 
                     ? ["React", "|", "Next.js", "|", "TypeScript", "|", "Web3.js", "|", "GraphQL", "|", "MongoDB", "|", "API", "|", "Deno.js", "|", "AWS", "|", "CI/CD"].filter(x => x != "|")
